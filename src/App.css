@@ -1,38 +1,289 @@
-.App {
-  text-align: center;
-}
-
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
-}
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+.app {
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  font-size: calc(10px + 2vmin);
+  height: 100vh;
+}
+
+.message {
+  text-align: center;
+}
+
+nav {
+  margin-top: 20px;
+}
+
+ul {
+  list-style-type: none;
+  display: flex;
+  justify-content: center;
+  padding: 0;
+}
+
+li {
+  margin: 0 10px;
+}
+
+a {
+  text-decoration: none;
+  color: black;
+  font-size: 24px;
+  padding: 10px 20px;
+  border: 2px solid black;
+  border-radius: 5px;
+  transition: all 0.2s ease-in-out;
+}
+
+a:hover {
+  background-color: black;
   color: white;
 }
 
-.App-link {
-  color: #61dafb;
+
+/* ------------------------------- */
+.jogo-da-velha {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.title {
+  margin-top: 40px;
+}
+
+.board {
+  display: flex;
+  flex-direction: column;
+  border: 2px solid black;
+  margin-top: 20px;
+}
+
+.row {
+  display: flex;
+}
+
+.cell {
+  width: 60px;
+  height: 60px;
+  border: 1px solid black;
+}
+
+/* ---------------------- */
+.jogo-da-velha {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.title {
+  margin-top: 40px;
+}
+
+.board {
+  display: flex;
+  flex-direction: column;
+  border: 2px solid black;
+  margin-top: 20px;
+}
+
+.row {
+  display: flex;
+}
+
+.cell {
+  width: 60px;
+  height: 60px;
+  border: 1px solid black;
+}
+
+/* -------------------------- */
+/* Estilos para PalavraSecreta */
+.palavra-secreta {
+  display: flex;
+  justify-content: center;
+  margin: 20px 0;
+}
+
+.palavra-secreta__letra {
+  border-bottom: 3px solid black;
+  font-size: 32px;
+  margin-right: 10px;
+  padding-bottom: 10px;
+}
+
+.palavra-secreta__letra--invisivel {
+  border-bottom: none;
+}
+
+/* Estilos para LetrasUsadas */
+.letras-usadas {
+  margin-bottom: 20px;
+}
+
+.letras-usadas__titulo {
+  font-size: 18px;
+  margin-bottom: 10px;
+}
+
+.letras-usadas__lista {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.letras-usadas__letra {
+  background-color: #eee;
+  border: 2px solid #aaa;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 24px;
+  height: 40px;
+  margin: 5px;
+  width: 40px;
+  text-transform: uppercase;
+  font-weight: bold;
+}
+
+.letras-usadas__letra--acerto {
+  background-color: #5cb85c;
+  color: white;
+}
+
+.letras-usadas__letra--erro {
+  background-color: #d9534f;
+  color: white;
+}
+
+/* Estilos para PainelForca */
+.painel-forca {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 20px;
+}
+
+.painel-forca__tentativas {
+  background-color: #eee;
+  border: 2px solid black;
+  border-radius: 10px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 24px;
+  height: 50px;
+  width: 50px;
+}
+
+.painel-forca__imagem {
+  height: 300px;
+  margin-left: 20px;
+}
+
+/* Estilos para InputLetra */
+.input-letra {
+  display: flex;
+  margin-bottom: 20px;
+}
+
+.input-letra__input {
+  font-size: 24px;
+  height: 40px;
+  margin-right: 10px;
+  padding: 0 10px;
+  width: 40px;
+}
+
+.input-letra__button {
+  background-color: #333;
+  border: none;
+  color: white;
+  font-size: 24px;
+  height: 40px;
+  padding: 0 10px;
+  cursor: pointer;
+}
+
+.input-letra__button:hover {
+  background-color: #555;
+}
+
+
+/* ---------------------- */
+.square {
+  background-color: #fff;
+  border: 2px solid #000;
+  font-size: 24px;
+  font-weight: bold;
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  height: 100%;
+}
+
+.board {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  border: 2px solid #000;
+  margin: 0 auto;
+  padding: 20px;
+}
+
+.board-row {
+  display: flex;
+}
+
+.board-row:after {
+  clear: both;
+  content: "";
+  display: table;
+}
+
+.square {
+  background-color: #fff;
+  border: 2px solid #000;
+  font-size: 24px;
+  font-weight: bold;
+  margin: 0;
+  padding: 0;
+  width: 50px;
+  height: 50px;
+  line-height: 50px;
+  text-align: center;
+}
+
+.game {
+  display: flex;
+  flex-direction: row;
+  margin: 20px auto;
+  max-width: 800px;
+}
+
+.game-board {
+  margin-right: 20px;
+}
+
+.game-info {
+  margin-left: 20px;
+}
+
+.game-info>div {
+  font-size: 24px;
+  font-weight: bold;
+  margin-bottom: 10px;
+}
+
+.game-info>ol {
+  margin: 0;
+  padding: 0;
+  font-size: 16px;
+  list-style: none;
+}
+
+.game-info>ol>li>button {
+  font-size: 16px;
+  font-weight: normal;
+  margin-bottom: 5px;
 }
