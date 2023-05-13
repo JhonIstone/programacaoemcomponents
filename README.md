@@ -1,4 +1,4 @@
-Este repositório contém um site feito em reactjs com jogo de forca e o jogo da velha seguindo os conceitos da programacao baseada em componentes 
+Este repositório contém um site feito em reactjs com jogo de forca e o jogo da velha seguindo os conceitos da programacao baseada em componentes.
 
 ## Como executar o jogo
 
